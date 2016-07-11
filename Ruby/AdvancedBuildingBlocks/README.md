@@ -5,52 +5,35 @@ Look through these now and then use them to test yourself after doing the assign
 Note: This is again a long list of things to understand! Read through the list, breathe deep, do the assignment, and then come back to them.
 
     Conditionals and Flow Control
-        What is a "boolean"?
-        What are "truthy" values?
-        Are nil, 0, "0", "", 1, [], {} and -1 considered true or false?
-        When do you use elsif?
-        When do you use unless?
-        What does <=> do?
-        Why might you define your own <=> method?
-        What do || and && and ! do?
-        What is returned by puts("woah") || true?
-        What is ||=?
-        What is the ternary operator?
-        When should you use a case statement?
-
-    Iteration
-        What does loop do?
-        What are the two ways to denote a block of code?
-        What is an index variable?
-        How do you print out each item of a simple array [1,3,5,7] with:
-            loop?
-            while?
-            for?
-            #each?
-            #times?
-        What's the difference between while and until?
-        How do you stop a loop?
-        How do you skip to the next iteration of a loop?
-        How would you start the loop over again?
-        What are the (basic) differences between situations when you would use while vs #times vs #each?
-        What does nesting loops mean and when would you use it?
+        What is a "boolean"? - true or false values
+        What are "truthy" values? - values that evaluate to true
+        Are nil, 0, "0", "", 1, [], {} and -1 considered true or false? - everything except nil in this list evaluates to true
+        When do you use elsif? - if you want to do a conditional branch only if the initial false statement evaluates to false
+        When do you use unless? - when you want to make your code more readable instead of doing "if not"
+        What does <=> do? in a <=> b, it will return -1 if a < b, 0 if a == b, and 1 if a > b.  It will return nil if they cannot be compared.
+        Why might you define your own <=> method? - if you define it in your own class and include the Comparable module, your class gets >, < , >=, <=, ==, and between? methods for free.
+        What do || and && and ! do? - || is or, && is and, and ! is not.  e.g. if a == 0 || b == 0
+        What is returned by puts("woah") || true? - true since puts returns nil
+        What is ||=? - in a ||= b if a is undefined, assign it the value of b
+        What is the ternary operator? - used a shortcut if/else statement: if_this_is_a_true_value ? then_the_result_is_this : else_it_is_this
+        When should you use a case statement? - sometimes it can be much more condense to do control flow using a case statement.  Especially if you are matching on multiple values, regex, etc.
 
     Blocks, Procs, and Lambdas:
-        How is a block like a function?
+        How is a block like a function? - 
         How is a block different from a function?
-        What are the two ways to declare a block?
+        What are the two ways to declare a block? - do/end or {}
         How do you return data from a block?
         What happens if you include a return statement in a block?
         Why would you use a block instead of just creating a method?
-        What does yield do?
-        How do you pass arguments to a block from within a method?
-        How do you check whether a block was actually passed in?
-        What is a proc?
-        What's the difference between a proc and a block?
-        When would you use a proc instead of a block?
+        What does yield do? - calls the block passed in
+        How do you pass arguments to a block from within a method? - yield(argument)
+        How do you check whether a block was actually passed in? - use block_given? 
+        What is a proc? - similar to a block, but an object and can be stored in a variable
+        What's the difference between a proc and a block? - proc is an object, block is not, can call proc
+        When would you use a proc instead of a block? - DRY up code (store in variables)
         What is a closure?
-        What is a lambda?
-        What's different between a lambda and a proc?
+        What is a lambda? - similar to a proc, except checks number of arguments and passes control back to calling method
+        What's different between a lambda and a proc?  - see above
         What is a Method (capital "M")?
         What do Methods basically allow you to do that could probably be pretty interesting when you're writing some more advanced programs later on?
 
@@ -72,7 +55,7 @@ Note: This is again a long list of things to understand! Read through the list, 
         What (basically) is an enumerator?
 
     Writing Methods
-        How many things should a method ideally do?
+        How many things should a method ideally do? - ONE
         What types of things should a method modify?
         What should you name a method?
         What does self mean?
